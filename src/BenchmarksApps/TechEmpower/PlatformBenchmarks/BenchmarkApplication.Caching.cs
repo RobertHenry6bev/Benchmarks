@@ -10,6 +10,7 @@ namespace PlatformBenchmarks
     {
         private static async Task Caching(PipeWriter pipeWriter, int count)
         {
+            RequestCallBackForMonitoring(10);
             OutputMultipleQueries(pipeWriter, await RawDb.LoadCachedQueries(count), SerializerContext.CachedWorldArray);
         }
     }

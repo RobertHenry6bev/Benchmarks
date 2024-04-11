@@ -33,6 +33,7 @@ namespace PlatformBenchmarks
 
         private ValueTask OutputFortunes<TModel>(PipeWriter pipeWriter, TModel model, SliceFactory<TModel> templateFactory)
         {
+            RequestCallBackForMonitoring(10);
             // Render headers
             var preamble = """
                 HTTP/1.1 200 OK

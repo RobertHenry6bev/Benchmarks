@@ -16,6 +16,7 @@ namespace PlatformBenchmarks
 
         private static void OutputUpdates(PipeWriter pipeWriter, World[] rows)
         {
+            RequestCallBackForMonitoring(10);
             var writer = GetWriter(pipeWriter, sizeHint: 120 * rows.Length); // in reality it's 112 for one
 
             writer.Write(_dbPreamble);
