@@ -19,7 +19,7 @@ namespace PlatformBenchmarks
 
         private static void Json(ref BufferWriter<WriterAdapter> writer, IBufferWriter<byte> bodyWriter)
         {
-            RequestCallBackForMonitoring(10); // robhenry
+            // RequestCallBackForMonitoring(10); // robhenry
             writer.Write(_jsonPreamble);
 
             // Date header

@@ -15,7 +15,7 @@ namespace PlatformBenchmarks
 
         private static void PlainText(ref BufferWriter<WriterAdapter> writer)
         {
-            RequestCallBackForMonitoring(10); // robhenry
+            // RequestCallBackForMonitoring(10); // robhenry
             writer.Write(_plaintextPreamble);
 
             // Date header

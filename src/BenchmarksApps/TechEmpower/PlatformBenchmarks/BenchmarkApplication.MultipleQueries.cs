@@ -17,7 +17,7 @@ namespace PlatformBenchmarks
 
         private static void OutputMultipleQueries<TWord>(PipeWriter pipeWriter, TWord[] rows, JsonTypeInfo<TWord[]> jsonTypeInfo)
         {
-            RequestCallBackForMonitoring(10); // robhenry
+            // RequestCallBackForMonitoring(10); // robhenry
             var writer = GetWriter(pipeWriter, sizeHint: 160 * rows.Length); // in reality it's 152 for one
 
             writer.Write(_dbPreamble);

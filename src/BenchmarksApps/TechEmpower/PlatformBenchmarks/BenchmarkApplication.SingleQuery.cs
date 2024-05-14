@@ -16,7 +16,7 @@ namespace PlatformBenchmarks
 
         private static void OutputSingleQuery(PipeWriter pipeWriter, World row)
         {
-            RequestCallBackForMonitoring(10); // robhenry
+            // RequestCallBackForMonitoring(10); // robhenry
             var writer = GetWriter(pipeWriter, sizeHint: 180); // in reality it's 150
 
             writer.Write(_dbPreamble);
