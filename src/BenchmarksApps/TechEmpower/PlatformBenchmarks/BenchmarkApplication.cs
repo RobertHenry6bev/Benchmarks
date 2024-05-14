@@ -137,11 +137,10 @@ namespace PlatformBenchmarks
         //
         private static void RequestCallBackForMonitoring(int effort)
         {
-            Burner.ReallyBurnCycles(50*effort);  // DO NOT COMMIT long term TODO
             //
             // Interlocked.Increment returns the value after the increment.
             //
-            var captured_env_count = Interlocked.Increment(ref env_count) - 1; // WATCHOUT: this is a hot spot
+            var captured_env_count = Interlocked.Increment(ref env_count) - 1; // WATCHOUT: this may prove to be a hot spot
             if (captured_env_count == 0) {
                 aha_roi_unique = getVariable(
                   "AHA_ROI_UNIQUE", aha_roi_unique);
