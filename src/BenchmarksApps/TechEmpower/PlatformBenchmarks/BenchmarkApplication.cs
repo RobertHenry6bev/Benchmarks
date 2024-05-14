@@ -133,7 +133,7 @@ namespace PlatformBenchmarks
         //
         private static void RequestCallBackForMonitoring(int effort)
         {
-            return; /*
+            Burner.ReallyBurnCycles(effort);  // DO NOT COMMIT long term TODO
             //
             // Interlocked.Increment returns the value after the increment.
             //
@@ -188,7 +188,6 @@ namespace PlatformBenchmarks
                     Burner.ReallyBurnCycles(effort);
                 }
             }
-        */
         }
 
 #if DATABASE
