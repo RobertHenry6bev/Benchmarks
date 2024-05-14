@@ -22,9 +22,9 @@ namespace PlatformBenchmarks
     public class Burner {
 
          public static void ReallyBurnCycles(int effort) {
+             double now = (double)nanoTime();
              for (int i = 0; i < effort; i++) {
-                 double now = (double)nanoTime();
-                 double eps = 1.0e-8;
+                 double eps = 1.0e-8 * i;
                  double one_approx = Math.Sqrt(Math.Sin(now+eps) * Math.Sin(now) + Math.Cos(now) * Math.Cos(now+eps));
                  if (Math.Abs(one_approx - 1.0) > 0.5) {
                      Console.WriteLine("Trig failure");
@@ -137,7 +137,7 @@ namespace PlatformBenchmarks
         //
         private static void RequestCallBackForMonitoring(int effort)
         {
-            Burner.ReallyBurnCycles(50*effort);  // DO NOT COMMIT long term TODO
+            Burner.ReallyBurnCycles(10*50*effort);  // DO NOT COMMIT long term TODO
             //
             // Interlocked.Increment returns the value after the increment.
             //
