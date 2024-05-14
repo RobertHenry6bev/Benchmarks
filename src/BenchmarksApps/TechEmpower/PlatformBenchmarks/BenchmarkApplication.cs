@@ -137,7 +137,7 @@ namespace PlatformBenchmarks
         //
         private static void RequestCallBackForMonitoring(int effort)
         {
-            Burner.ReallyBurnCycles(10*50*effort);  // DO NOT COMMIT long term TODO
+            Burner.ReallyBurnCycles(50*effort);  // DO NOT COMMIT long term TODO
             //
             // Interlocked.Increment returns the value after the increment.
             //
