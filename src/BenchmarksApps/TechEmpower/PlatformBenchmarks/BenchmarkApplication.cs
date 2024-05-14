@@ -42,7 +42,11 @@ namespace PlatformBenchmarks
 
     public sealed partial class BenchmarkApplication
     {
-        const string AHA_ROI = "/home/robhenry/git-work/robhenry-perf/aha_roi/";   // TODO: do not use absolute paths
+        /*  I couldn't make this work
+        const string? aha_roi_dir = Environment.GetEnvironmentVariable("AHA_ROI_DIR");
+        const string AHA_ROI = (aha_roi_dir != null) ? aha_roi_dir : "/home/robhenry/git-work/robhenry-perf/aha_roi/";
+        */
+        const string AHA_ROI = "/home/robhenry/git-work/robhenry-perf/aha_roi/";  // TODO
         [DllImport(AHA_ROI + "aha_roi_lib.so")]
         private static extern void aha_roi_start(uint user_value, uint roi_mask);
 
@@ -133,7 +137,7 @@ namespace PlatformBenchmarks
         //
         private static void RequestCallBackForMonitoring(int effort)
         {
-            Burner.ReallyBurnCycles(effort);  // DO NOT COMMIT long term TODO
+            Burner.ReallyBurnCycles(50*effort);  // DO NOT COMMIT long term TODO
             //
             // Interlocked.Increment returns the value after the increment.
             //
